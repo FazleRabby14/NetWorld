@@ -1,0 +1,348 @@
+
+{% block product %}
+<div class=" mx-auto my-8 px-2">
+    <div class="flex justify-center text-2xl md:text-3xl font-bold">
+        Our Products                                                         
+    </div>
+
+    <ul class="grid gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:p-5">
+        <!-- First four items (always visible) -->
+        <li id="div1" class="animation-product relative bg-white flex flex-col justify-between border rounded shadow-md transition-transform transform-gpu hover:scale-105 hover:shadow-teal-400">
+            <a class="relative" href="/tool/writey-ai">
+                <img class="rounded relative w-full h-[300px] object-cover aspect-video" src="https://southernstatesbank.net/wp-content/uploads/2021/04/woman-using-atm_t20_goBo9N-edited-scaled.jpg" alt="ATM" loading="lazy">
+            </a>
+            <div class="flex flex-col justify-between gap-3 px-4 py-2">
+                <a href="/tool/writey-ai" class="flex justify-center items-center text-xl font-semibold text-teal-700 hover:text-teal-800 two-lines text-ellipsis">
+                    <span>ATM</span>
+                    <small class="font-medium text-sm">- FINANCIAL SOLUTIONS</small>
+                </a>
+                <p class="text-gray-600 two-lines no-caps">
+                    • We are the partners of NCR in Bangladesh providing various self-service solutions to banks.
+                    • Our products include ATM, CRM, switch, card management solutions, self-service banking software, financial middleware, reconciliation, enterprise API management, and other banking software.
+                </p>
+            </div>
+        </li>
+
+        <li id="div2" class="animation-product relative bg-white flex flex-col justify-between border rounded shadow-md transition-transform transform-gpu hover:scale-105 hover:shadow-teal-400">
+            <a class="relative" href="/tool/writey-ai">
+                <img class="rounded relative w-full h-[300px] object-cover aspect-video" src="https://png.pngtree.com/thumb_back/fh260/background/20230705/pngtree-illustration-of-payment-methods-through-pos-terminal-image_3749876.jpg" alt="POS" loading="lazy">
+            </a>
+            <div class="flex flex-col justify-between gap-3 px-4 py-2">
+                <a href="/tool/writey-ai" class="flex justify-center items-center text-xl font-semibold text-teal-700 hover:text-teal-800 two-lines text-ellipsis">
+                    <span>POS</span>
+                    <small class="font-medium text-sm">- Point of Sale Solutions</small>
+                </a>
+                <p class="text-gray-600 two-lines">
+                    • We are the partner of Urovo in Bangladesh providing various self-service solutions to banks and other institutions. <br/>
+                    • Our products include POS terminals, PDA devices, fingerprint tablets, mobile printers, and other banking & non-banking hardware and software.
+                </p>
+            </div>
+        </li>
+
+        <li id="div3" class="animation-product relative bg-white flex flex-col justify-between border rounded shadow-md transition-transform transform-gpu hover:scale-105 hover:shadow-teal-400">
+            <a class="relative" href="/tool/writey-ai">
+                <img class="rounded relative w-full h-[300px] object-cover aspect-video" src="https://www.acquisition-international.com/wp-content/uploads/2022/06/Digital-Bank.jpg" alt="Digital" loading="lazy">
+            </a>
+            <div class="flex flex-col justify-between gap-3 px-4 py-2">
+                <a href="/tool/writey-ai" class="flex justify-center items-center text-xl font-semibold text-teal-700 hover:text-teal-800 two-lines text-ellipsis">
+                    <span>Digital</span>
+                    <small class="font-medium text-sm">- Banking Solutions</small>
+                </a>
+                <p class="text-gray-600 two-lines">
+                    • Our Bank Switch & Card Management System (CMS), providing a solution for omni-channel transactions and facilitating card and transaction management infrastructure. 
+                    <br/>• We provide e-Commerce Payment Gateway solutions, providing a robust platform for merchants and banks alike.
+                </p>
+            </div>
+        </li>
+
+        <li id="div4" class="animation-product relative bg-white flex flex-col justify-between border rounded shadow-md transition-transform transform-gpu hover:scale-105 hover:shadow-teal-400">
+            <a class="relative" href="/tool/writey-ai">
+                <img class="rounded relative w-full h-[300px] object-cover aspect-video" src="https://miro.medium.com/v2/resize:fit:1358/1*YEORJPSldBx9XdahQD1YzQ.jpeg" alt="Digital Banking Solutions (CONT.)" loading="lazy">
+            </a>
+            <div class="flex flex-col justify-between gap-3 px-4 py-2">
+                <a href="/tool/writey-ai" class="flex justify-center items-center text-xl font-semibold text-teal-700 hover:text-teal-800 two-lines text-ellipsis">
+                    <span>Digital</span>
+                    <small class="font-medium text-sm">- Banking Solutions(CONT.)</small>
+                </a>
+                <p class="text-gray-600 two-lines">
+                    • We provide Android-based SoftPOS hardware and software solutions to create greater flexibility for merchants and banks to improve payment services.
+                    <br/>
+                    • Our API Management & Financial Middleware solutions, allowing Banks to scale, analyze, and monetize their APIs and secure their data.   
+                </p>
+            </div>
+        </li>
+
+        <!-- Additional items (initially hidden) -->
+        <li class="relative bg-white flex flex-col justify-between border rounded shadow-md transition-transform transform-gpu hover:scale-105 hover:shadow-teal-400 hidden">
+            <a class="relative" href="/tool/writey-ai">
+                <img class="rounded relative w-full h-[300px] object-cover aspect-video" src="https://preview.free3d.com/img/2023/04/3190274746650461833/a9tkudhm.jpg" alt="MICR" loading="lazy">
+            </a>
+            <div class="flex flex-col justify-between gap-3 px-4 py-2">
+                <a href="/tool/writey-ai" class="flex justify-center items-center text-xl font-semibold text-teal-700 hover:text-teal-800 two-lines text-ellipsis">
+                    <span>MICR</span>
+                    <small class="font-medium text-sm">- MICR Cheque & reader</small>
+                </a>
+                <p class="text-gray-600 two-lines">
+                    • We are the partners for Arca and have supplied over 4800 MICR cheque readers & scanners to various banks.<br/>
+                    • We provide MICR cheque printing and personalization services for various banks including delivery to bank branches.
+                </p>
+            </div>
+        </li>
+
+        <!-- Repeat the same for other additional items... -->
+        <li class="relative bg-white flex flex-col justify-between border rounded shadow-md transition-transform transform-gpu hover:scale-105 hover:shadow-teal-400 hidden">
+            <a class="relative" href="/tool/writey-ai">
+                <img class="rounded relative w-full h-[300px] object-cover aspect-video" src="https://switchio.com/sites/default/files/styles/main_small/public/images/2021-03/switchio-card-management-system-hl.jpg?itok=IlktHwc1" alt="Card Management" loading="lazy">
+            </a>
+            <div class="flex flex-col justify-between gap-3 px-4 py-2">
+                <a href="/tool/writey-ai" class="flex justify-center items-center text-xl font-semibold text-teal-700 hover:text-teal-800 two-lines text-ellipsis">
+                    <span>CARD</span>
+                    <small class="font-medium text-sm">- Cards and Personalization</small>
+                </a>
+                <p class="text-gray-600 two-lines">
+                    • We supply all kinds of magnetic stripe, EMV & contactless Visa/Mastercard/Amex/proprietary debit & credit cards to various financial institutions in Bangladesh.
+                    <br/>
+                    • We have also supplied 60,000 smart rapid pass (one card for all public transport) for Dhaka Transport Coordination Authority (DTCA).
+                </p>
+            </div>
+        </li>
+
+        <li class="relative bg-white flex flex-col justify-between border rounded shadow-md transition-transform transform-gpu hover:scale-105 hover:shadow-teal-400 hidden">
+            <a class="relative" href="/tool/writey-ai">
+                <img class="rounded relative w-full h-[300px] object-cover aspect-video" src="https://www.hurix.com/wp-content/uploads/2022/01/Cyber-security.jpg" alt="Security" loading="lazy">
+            </a>
+            <div class="flex flex-col justify-between gap-3 px-4 py-2">
+                <a href="/tool/writey-ai" class="flex justify-center items-center text-xl font-semibold text-teal-700 hover:text-teal-800 two-lines text-ellipsis">
+                    <span>SECURITY</span>
+                    <small class="font-medium text-sm">- Security Solutions</small>
+                </a>
+                <p class="text-gray-600 two-lines">
+                    • We provide ATM Security Systems for NCR Bangladesh including Intrusion Protection, Video Surveillance, Anti-Skimming Device, and Safes.<br/>
+                    • We also provide enterprise security solutions like hardware security modules (HSM), end-to-end encryption, key management, certificate authority, and security consulting.
+                </p>
+            </div>
+        </li>
+
+        <li class="relative bg-white flex flex-col justify-between border rounded shadow-md transition-transform transform-gpu hover:scale-105 hover:shadow-teal-400 hidden">
+            <a class="relative" href="/tool/writey-ai">
+                <img class="rounded relative w-full h-[300px] object-cover aspect-video" src="https://southernstatesbank.net/wp-content/uploads/2021/04/woman-using-atm_t20_goBo9N-edited-scaled.jpg" alt="Consulting" loading="lazy">
+            </a>
+            <div class="flex flex-col justify-between gap-3 px-4 py-2">
+                <a href="/tool/writey-ai" class="flex justify-center items-center text-xl font-semibold text-teal-700 hover:text-teal-800 two-lines text-ellipsis">
+                    <span>CONSULTING</span>
+                    <small class="font-medium text-sm">- Consulting Services</small>
+                </a>
+                <p class="text-gray-600 two-lines">
+                    • We provide consulting services for our products including installation, configuration, customization, and maintenance.<br/>
+                    • We have a team of experienced professionals who can help you with your IT and business needs.
+                </p>
+            </div>
+        </li>
+        <li class="relative bg-white flex flex-col justify-between border rounded shadow-md transition-transform transform-gpu hover:scale-105 hover:shadow-teal-400 hidden">
+
+            <a class="relative" href="/tool/writey-ai">
+                <img class="rounded relative w-full h-[300px] object-cover aspect-video"
+                    src="https://signsoft.co.uk/wp-content/uploads/2020/08/shutterstock_1119128888.jpg"  alt="Writey A.I" loading="lazy">
+            </a>
+    
+    
+            <div class="flex flex-col justify-beetween gap-3 px-4 py-2">
+                <a href="/tool/writey-ai"
+                    class="flex justify-center items-center text-xl font-semibold text-teal-700 hover:text-teal-800 two-lines text-ellipsis">
+                    <span>TIS</span>
+                    <small class="font-medium text-sm">- Total Infrastructure Support</small>
+                </a>
+    
+                <p class="text-gray-600 two-lines">
+                        •	We have a dedicated, certified, and skilled team ofengineers across bangladesh.
+                    
+                    <br/>•	We supply and provide air conditioners, ups, civil  construction, electrical work, and earthing  solutions.
+                </p>
+    
+              
+    
+              
+            </div>
+    
+        </li>
+    
+        <li class="relative bg-white flex flex-col justify-between border rounded shadow-md transition-transform transform-gpu hover:scale-105 hover:shadow-teal-400 hidden">
+    
+            <a class="relative" href="/tool/writey-ai">
+                <img class="rounded relative w-full h-[300px] object-cover aspect-video"
+                    src="https://shipsy.io/wp-content/uploads/2023/03/imgonline-com-ua-CompressToSize-U0ZEA1UHqoYN.jpg"  alt="Writey A.I" loading="lazy">
+            </a>
+    
+    
+            <div class="flex flex-col justify-beetween gap-3 px-4 py-2">
+                <a href="/tool/writey-ai"
+                    class="flex justify-center items-center text-xl font-semibold text-teal-700 hover:text-teal-800 two-lines text-ellipsis">
+                    <span> LOGISTICS</span>
+                    <small class="font-medium text-sm">- Import & Export</small>
+                </a>
+    
+                <p class="text-gray-600 two-lines">
+                    •	We handle the import and export of cargo to & from bangladesh by air, sea & land.
+                    <br/>
+                    •	We provide customs brokerage & warehousing services.
+                    <br/>
+                    •	Logistics management is a component that holds the supply chain together.
+                </p>
+    
+              
+    
+              
+            </div>
+    
+        </li>
+    
+        <li class="relative bg-white flex flex-col justify-between border rounded shadow-md transition-transform transform-gpu hover:scale-105 hover:shadow-teal-400 hidden">
+    
+            <a class="relative" href="/tool/writey-ai">
+                <img class="rounded relative w-full h-[300px] object-cover aspect-video"
+                    src="https://1021sunrise.com/wp-content/uploads/2019/08/courier-service-1024x682.jpeg"  alt="Writey A.I" loading="lazy">
+            </a>
+    
+    
+            <div class="flex flex-col justify-beetween gap-3 px-4 py-2">
+                <a href="/tool/writey-ai"
+                    class="flex justify-center items-center text-xl font-semibold text-teal-700 hover:text-teal-800 two-lines text-ellipsis">
+                    <span> COURIER</span>
+                    <small class="font-medium text-sm">- To our clients across Bangladesh</small>
+                </a>
+    
+                <p class="text-gray-600 two-lines">
+                    •	We provide courier services to our clients across bangladesh. <br/>
+                    •	We deliver over 700,000 corporate documents monthly.<br/>
+                    •	Our clients include banks, telcos and corporate houses.          
+                </p>
+    
+              
+    
+              
+            </div>
+    
+        </li>
+    
+        <li class="relative bg-white flex flex-col justify-between border rounded shadow-md transition-transform transform-gpu hover:scale-105 hover:shadow-teal-400 hidden">
+    
+            <a class="relative" href="/tool/writey-ai">
+                <img class="rounded relative w-full h-[300px] object-cover aspect-video"
+                    src="https://mist.ac.bd/uploads/1610288123.jpg"  alt="Writey A.I" loading="lazy">
+            </a>
+    
+    
+            <div class="flex flex-col justify-beetween gap-3 px-4 py-2">
+                <a href="/tool/writey-ai"
+                    class="flex justify-center items-center text-xl font-semibold text-teal-700 hover:text-teal-800 two-lines text-ellipsis">
+                    <span> Sports</span>
+                    <small class="font-medium text-sm"></small>
+                </a>
+    
+                <p class="text-gray-600 two-lines">
+                    •	Networld is the co-organizer of bangabandhu sheikh mujib dhaka marathon which has been held annually since 2021 to celebrate the homecoming day of the father of the nation bangabandhu shiekh mujibur rahman.
+                    
+                    <br>
+                    •	We have also held multiple other sporting competitions including channel swimming, trekking, and beach marathon.                            
+                </p>
+    
+              
+    
+              
+            </div>
+    
+        </li>
+
+    </ul>
+
+    <div  class="flex justify-center">
+        <button id="showMoreBtn" class=" animation-product group relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
+            <div id="div5" class="flex">
+                <span class="relative flex px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                    Show more
+                    <svg class=" w-6 h-6 border border-black group-hover:border-white rounded-full mx-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19V5m0 14-4-4m4 4 4-4"/>
+                    </svg>
+                    </span>
+           
+            </div>
+        </button>
+        
+        <button id="showLessBtn" class="group flex hidden relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 ">
+
+              <div class="flex">
+                <span class="relative flex px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                    Show less
+                <svg class="w-6 h-6 border border-black group-hover:border-white rounded-full mx-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v13m0-13 4 4m-4-4-4 4"/>
+                  </svg>
+                  </span>
+              </div>
+        </button>
+    </div>
+</div>
+
+<script>
+const showMoreBtn = document.getElementById('showMoreBtn');
+const showLessBtn = document.getElementById('showLessBtn');
+
+showMoreBtn.addEventListener('click', function() {
+const hiddenItems = document.querySelectorAll('ul.grid > li.hidden');
+hiddenItems.forEach(item => {
+    item.classList.remove('hidden');
+});
+this.style.display = 'none';
+showLessBtn.style.display = 'inline-block';
+});
+
+showLessBtn.addEventListener('click', function() {
+const visibleItems = document.querySelectorAll('ul.grid > li:not(.hidden)');
+visibleItems.forEach((item, index) => {
+    if (index >= 4) {
+        item.classList.add('hidden');
+    }
+});
+this.style.display = 'none';
+showMoreBtn.style.display = 'inline-block';
+});
+
+//animation
+document.addEventListener("DOMContentLoaded", function() {
+        const divs = document.querySelectorAll('.animation-product');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('active');
+                    }, index * 100); // Adjust delay here (200 milliseconds = 0.2 seconds)
+                }
+            });
+        });
+
+        divs.forEach(div => {
+            observer.observe(div);
+        });
+    });
+</script>
+<style>
+   
+
+.animation-product {
+    opacity: 0;
+    transform: translatey(100%);
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+
+    .animation-product.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+.animation-product.active {
+    opacity: 1;
+    transform: translatex(0);
+}
+
+</style>
+{% endblock %}

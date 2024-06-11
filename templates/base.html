@@ -1,0 +1,318 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Networld Group</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="{% static 'js/animation.js' %}"></script>
+  </head>
+
+  <body x-data="{ open: false }">
+    <!-- component -->
+    <header
+      class="flex border-b font-sans min-h-[70px] tracking-wide relative z-50"
+    >
+      <div
+        class="flex fixed items-center justify-between px-6 py-3 gap-4 w-full bg-white border-b border-orange-500 shadow-md"
+      >
+        <a href="javascript:void(0)">
+          <img
+            src="{% static 'image/networld-removebg-preview.png' %}"
+            alt="logo"
+            class="w-36"
+          />
+        </a>
+
+        <nav class="flex-1 flex justify-center">
+          <ul class="hidden md:flex items-center gap-x-10">
+            <li>
+              <a href="{% url 'index' %}" class="font-semibold">Home</a>
+            </li>
+
+              <li class="group inline-block">
+              <button
+                class="outline-none focus:outline-none px-3 py-1 bg-white rounded-sm flex items-center min-w-32"
+              >
+                <span class="pr-1 font-semibold flex-1">Products</span>
+                <span>
+                  <svg
+                    class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <ul
+                class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32"
+              >
+              {% for category in categories %}
+              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                <button
+                  class="w-full text-left flex items-center outline-none focus:outline-none"
+                >
+                  <span class="pr-1 flex-1">{{ category.name }}</span>
+                  <span class="mr-auto">
+                    <svg
+                      class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+          
+                <ul
+                  class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32 cursor-pointer"
+                >
+                  {% for item in category.products.all %}
+                    <li class="px-3 py-1 hover:bg-gray-100">
+                      <a href="{% url 'productsDetails' item.id %}">{{ item.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% endfor %}
+          </ul>
+          
+            </li>
+            <li>
+              <a href="{% url 'team' %}" class="font-semibold">Team</a>
+            </li>
+            <li>
+              <a href="{% url 'contact' %}" class="font-semibold">Contact</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="md:hidden">
+          <button @click="open = !open" class="outline-none mobile-menu-button">
+            <svg
+              class="w-6 h-6 text-gray-500"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+
+
+    <!-- Mobile Menu -->
+    <div
+      class="fixed inset-0 flex z-50"
+      x-show="open"
+      x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="opacity-0 -translate-x-full"
+      x-transition:enter-end="opacity-100 translate-x-0"
+      x-transition:leave="transition ease-in duration-300"
+      x-transition:leave-start="opacity-100 translate-x-0"
+      x-transition:leave-end="opacity-0 -translate-x-full"
+    >
+      <div class="bg-white w-96 h-full shadow-lg pt-20">
+        <div class="grid grid-cols-4">
+          <div class="col-span-3">
+            <a href="javascript:void(0)">
+              <img
+                src="{% static 'image/networld-removebg-preview.png' %}"
+                alt="logo"
+                class="w-36"
+              />
+            </a>
+          </div>
+          <div>
+            <button class="" @click="open = false">
+              <svg
+                class="h-6 w-6 text-gray-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+       
+
+        <div class="px-6 py-4">
+          
+          <!--home-->
+          <div >
+            <button
+            class="outline-none focus:outline-none px-3 py-1 bg-white rounded-sm flex items-center ml-2 min-w-32"
+          >
+            <a href="{% url 'index' %}" class="font-semibold">Home</a>
+            
+          </button>
+          </div>
+          <!--products-->
+          <div class="group inline-block">
+            <button
+              class="outline-none focus:outline-none px-3 py-1 bg-white rounded-sm flex  min-w-32"
+            >
+              <span class="pr-1 font-semibold flex-1">Products</span>
+              <span>
+                <svg
+                  class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                  />
+                </svg>
+              </span>
+            </button>
+            <ul
+              class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32"
+            >
+              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                {% for post in categories %}
+                <button
+                  class="w-full text-left flex items-center outline-none focus:outline-none"
+                >
+                  <span class="pr-1 flex-1">{{ post.name }}</span>
+                  <span class="mr-auto">
+                    <svg
+                      class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              
+                <ul
+                  class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32 cursor-pointer"
+                >
+                  {% for item in items %}
+           
+                  <li class="px-3 py-1 hover:bg-gray-100">
+                    <a href="{% url 'product_detail' post.id %}"
+                      >{{ item.title }}</a
+                    >
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endfor %}
+              </li>
+    
+            </ul>
+          </div>
+<!--team-->
+          <div>
+            <button
+              class="outline-none focus:outline-none px-3 py-1 bg-white rounded-sm flex items-center ml-2 min-w-32"
+            >
+              <a href="{% url 'index' %}" class="font-semibold">Team</a>
+            </button>
+          </div>
+<!--contact-->
+          <div>
+            <button
+              class="outline-none focus:outline-none px-3 py-1 bg-white rounded-sm flex items-center ml-2 min-w-32"
+            >
+              <a href="{% url 'index' %}" class="font-semibold">Contact</a>
+            </button>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="flex-1" @click="open = false"></div>
+    </div>
+
+    <main>{% block base %} {% endblock %}</main>
+
+    <style>
+      li > ul {
+        transform: translatex(100%) scale(0);
+      }
+      li:hover > ul {
+        transform: translatex(101%) scale(1);
+      }
+      li > button svg {
+        transform: rotate(-90deg);
+      }
+      li:hover > button svg {
+        transform: rotate(-270deg);
+      }
+      .group:hover .group-hover\:scale-100 {
+        transform: scale(1);
+      }
+      .group:hover .group-hover\:-rotate-180 {
+        transform: rotate(180deg);
+      }
+      .scale-0 {
+        transform: scale(0);
+      }
+      .min-w-32 {
+        min-width: 8rem;
+      }
+      @layer utilities {
+        @keyframes gradientChange {
+          0% {
+            background-position: 0%;
+          }
+          50% {
+            background-position: 100%;
+          }
+          100% {
+            background-position: 0%;
+          }
+        }
+        .gradient {
+          background: linear-gradient(90deg, blue, red);
+          background-size: 200% 200%;
+        }
+        .element-to-rotate {
+          animation: gradientChange 4s ease infinite;
+        }
+      }
+    </style>
+
+    <script>
+      document.addEventListener("alpine:init", () => {
+        Alpine.data("nav", () => ({
+          open: false,
+        }));
+      });
+    </script>
+  </body>
+</html>

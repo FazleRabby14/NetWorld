@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+{% load static %}
+{% block base %}
+
+
+
+
+
+
+    <main class="relative  flex flex-col justify-center  overflow-hidden ">
+        
+<!--header section-->
+<div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+    <img src="https://png.pngtree.com/thumb_back/fh260/background/20201102/pngtree-abstract-communication-and-technology-network-concep-image_450375.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center">
+    <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl" aria-hidden="true">
+      <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+    </div>
+    <div class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu" aria-hidden="true">
+      <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+    </div>
+    <div class=" max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="mx-auto lg:mx-0">
+            <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl animate-text text-center">Networld Group</h2>
+         
+            <p class="mt-6 text-lg leading-8 text-gray-300 animate-text text-center">NetWorld Group is a leading ICT solutions provider in Bangladesh, providing different forms of services and solutions to banks and financial institutions across the country. We believe in progress through innovation and implement that through our different companies. We are providing IT support& services to financial institutions and other customers across the country since 2006.</p>
+        </div>
+          <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
+            <!-- <div class="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
+              <a href="{% url 'alljob' %}" class="animate-link">Open roles <span aria-hidden="true">&rarr;</span></a>
+              <a href="{% url 'post' %}" class="animate-link">Internship program <span aria-hidden="true">&rarr;</span></a>
+              <a href="{% url 'index' %}" class="animate-link">Our values <span aria-hidden="true">&rarr;</span></a>
+              <a href="{% url 'team' %}" class="animate-link">Meet our leadership <span aria-hidden="true">&rarr;</span></a>
+            </div> -->
+       {% include 'achievement.html' %}
+       {% include 'number.html' %}
+      </div>
+    </div>
+  </div>
+ 
+        {% include 'introduction.html' %}  
+        {% include 'mission.html' %}
+        <!--another-->
+        <!--our products-->
+        {% include 'productsBlog.html' %}
+        
+        <!--done-->
+        <div class="mx-auto font-bold text-3xl pt-5 pb-14 md:pt-20"><h3>Our Partners</h3></div>
+        <div class="w-full mx-auto px-4 md:px-6 py-2 md:py-5">
+            <div class="text-center">
+        
+                <!-- Logo Carousel animation -->
+                <div
+                    x-data="{}"
+                    x-init="$nextTick(() => {
+                        let ul = $refs.logos;
+                        ul.insertAdjacentHTML('afterend', ul.outerHTML);
+                        ul.nextSibling.setAttribute('aria-hidden', 'true');
+                    })"
+                    class="w-full inline-flex flex-nowrap overflow-hidden logo-carousel"
+                >
+                    <ul x-ref="logos" class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+                        <li>
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/huaWei.png" alt="Huawei" class="h-10 md:h-16" />
+                        </li>
+                        <li>
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/certis.png" alt="Certis" class="h-10 md:h-16" />
+                        </li>
+                        <li>
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/MSP.png" alt="MSP" class="h-10 md:h-16" />
+                        </li>
+                        <li>
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/bpc.png" alt="BPC" class="h-10 md:h-16" />
+                        </li>
+                        <li>
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/urovo.png" alt="Urovo" class="h-10 md:h-16" />
+                        </li>
+                        <li>
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/EnSmart.png" alt="EnSmart" class="h-10 md:h-16" />
+                        </li>
+                        <li>
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/fime.png" alt="Fime" class="h-10 md:h-16" />
+                        </li>
+                        <li>
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/tiyanyu.png" alt="Tiyanyu" class="h-10 md:h-16" />
+                        </li>
+                    </ul>
+
+
+                </div>
+                <!-- End: Logo Carousel animation -->
+        
+            </div>
+        </div>
+        
+        <div class="w-full mx-auto px-4 md:px-6 py-2 md:py-5">
+            <div class="text-center">
+        
+                <!-- Logo Carousel animation -->
+                <div
+                    x-data="{}"
+                    x-init="$nextTick(() => {
+                        let ul = $refs.logos;
+                        ul.insertAdjacentHTML('afterend', ul.outerHTML);
+                        ul.nextSibling.setAttribute('aria-hidden', 'true');
+                    })"
+                    class="w-full inline-flex flex-nowrap overflow-hidden logo-carousel"
+                >
+                    <ul x-ref="logos" class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+                        <li>
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/huaWei.png" alt="Huawei" class="h-10 md:h-16" />
+                        </li>
+                        <li>
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/certis.png" alt="Certis" class="h-10 md:h-16" />
+                        </li>
+                        <li>
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/MSP.png" alt="MSP" class="h-10 md:h-16" />
+                        </li>
+                        <li>
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/bpc.png" alt="BPC" class="h-10 md:h-16" />
+                        </li>
+                        <li>
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/urovo.png" alt="Urovo" class="h-10 md:h-16" />
+                        </li>
+                        <li>
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/EnSmart.png" alt="EnSmart" class="h-10 md:h-16" />
+                        </li>
+                        <li>
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/fime.png" alt="Fime" class="h-10 md:h-16" />
+                        </li>
+                        <li>
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/tiyanyu.png" alt="Tiyanyu" class="h-10 md:h-16" />
+                        </li>
+                    </ul>
+                </div>
+                <!-- End: Logo Carousel animation -->
+        
+            </div>
+        </div>
+        
+    </main>
+
+    <style>
+        
+.animate-text {
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slide-in 1s forwards;
+}
+
+.animate-link {
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slide-in 1s forwards;
+}
+
+.animate-link:nth-child(1) { animation-delay: 0.1s; }
+.animate-link:nth-child(2) { animation-delay: 0.2s; }
+.animate-link:nth-child(3) { animation-delay: 0.3s; }
+.animate-link:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slide-in {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+        /* Default for mobile view */
+        .logo-carousel {
+            mask-image: linear-gradient(to right, transparent 0, black 20px, black calc(100% - 20px), transparent 100%);
+        }
+        
+        /* For medium screens and up */
+        @media (min-width: 768px) {
+            .logo-carousel {
+                mask-image: linear-gradient(to right, transparent 0, black 128px, black calc(100% - 128px), transparent 100%);
+            }
+        }
+        </style>
+        
+    {% endblock %}
+    
+    
