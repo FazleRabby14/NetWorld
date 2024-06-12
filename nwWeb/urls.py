@@ -20,19 +20,21 @@ from django.conf import settings
 from django.conf.urls.static import static
 from home import views
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('contact/', views.contactpage),
     path('team/', views.teampage),
-    path('productsDetails/', views.productpage),
     path('post/', views.jobpostpage),
     path('alljob/', views.jobpage),
-    path('productsDetails/', views.productpage),
-    path('product/<int:id>/', views.product_details, name='productsDetails'),
+        path('product/<int:product_id>/', views.product_detail),
+    # path('view_brochure/<int:pk>/', views.view_brochure),
 
 ]
 
 if settings.DEBUG:
-    urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
     

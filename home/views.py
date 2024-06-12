@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from .models import *
 from django.core.mail import send_mail
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -15,13 +16,20 @@ def indexpage(request):
     }
     return render(request, 'index.html', context)
 
+# def view_brochure(request, pk):
+#     product = get_object_or_404(Product, pk=pk)
+#     if product.brochure:
+#         with open(product.brochure.path, 'rb') as f:
+#             response = HttpResponse(f.read(), content_type='application/pdf')
+#             response['Content-Disposition'] = 'inline; filename="{}"'.format(product.brochure.name)
+#             return response
+#     else:
+#         return HttpResponse("No brochure available for this product.")
 
 
-
-def product_details(request, id):
-    product = get_object_or_404(Product, id=id)
+def product_detail(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
     return render(request, 'product_detail.html', {'product': product})
-
 
 def contactpage(request):
     return render(request, 'contact.html')

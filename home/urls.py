@@ -9,5 +9,6 @@ urlpatterns = [
     path('alljob/', views.jobpage, name='alljob'),
     path('post/', views.jobpostpage, name='post'),
     path('saveenquiry/', views.saveEnquiry,name='saveenquiry'),
-     path('product/<int:id>/', views.product_details, name='productsDetails'),
+     path('product/<int:product_id>/', views.product_detail, name='product_detail'),
+   
 ]

@@ -86,7 +86,7 @@
                 >
                   {% for item in category.products.all %}
                     <li class="px-3 py-1 hover:bg-gray-100">
-                      <a href="{% url 'productsDetails' item.id %}">{{ item.title }}</a>
+                      <a href="{% url 'product_detail' item.id %}">{{ item.title }}</a>
                     </li>
                   {% endfor %}
                 </ul>
