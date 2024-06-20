@@ -29,8 +29,9 @@ urlpatterns = [
     path('team/', views.teampage),
     path('post/', views.jobpostpage),
     path('alljob/', views.jobpage),
-        path('product/<int:product_id>/', views.product_detail),
+    path('product/<int:product_id>/', views.product_detail),
     # path('view_brochure/<int:pk>/', views.view_brochure),
+    path('product/', views.allproductpage, name='product')
 
 ]
 

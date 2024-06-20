@@ -41,6 +41,7 @@
             <li>
               <a href="{% url 'index' %}" class="font-semibold">Home</a>
             </li>
+
             <li class="group inline-block">
               <button
                 class="outline-none focus:outline-none px-3 py-1 bg-white rounded-sm flex items-center min-w-32"
@@ -58,14 +59,15 @@
                   </svg>
                 </span>
               </button>
-              <ul
-                class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32"
-              >
+                <ul
+                  class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32"
+                >
+                {% for category in categories %}
                 <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
                   <button
                     class="w-full text-left flex items-center outline-none focus:outline-none"
                   >
-                    <span class="pr-1 flex-1">Cash Dispense ATM</span>
+                    <span class="pr-1 flex-1">{{ category.name }}</span>
                     <span class="mr-auto">
                       <svg
                         class="fill-current h-4 w-4 transition duration-150 ease-in-out"
@@ -78,54 +80,20 @@
                       </svg>
                     </span>
                   </button>
+            
                   <ul
                     class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32 cursor-pointer"
                   >
-                    <li class="px-3 py-1 hover:bg-gray-100">
-                      <a href="{% url 'productsDetails' %}">Sefserv-22 ATM</a>
-                    </li>
-                    <li class="px-3 py-1 hover:bg-gray-100">
-                      <a href="{% url 'productsDetails' %}">Sefserv-22e ATM</a>
-                    </li>
-                    <li class="px-3 py-1 hover:bg-gray-100">
-                      <a href="{% url 'productsDetails' %}">Sefserv-25 ATM</a>
-                    </li>
-                    <li class="px-3 py-1 hover:bg-gray-100">
-                      <a href="{% url 'productsDetails' %}">Sefserv-27 ATM</a>
-                    </li>
-                    <li class="px-3 py-1 hover:bg-gray-100">
-                      <a href="{% url 'productsDetails' %}"
-                        >Sefserv SE Cash ATM</a
-                      >
-                    </li>
+                    {% for item in category.products.all %}
+                      <li class="px-3 py-1 hover:bg-gray-100">
+                        <a href="{% url 'product_detail' item.id %}">{{ item.title }}</a>
+                      </li>
+                    {% endfor %}
                   </ul>
                 </li>
-                <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
-                  <button
-                    class="w-full text-left flex items-center outline-none focus:outline-none"
-                  >
-                    <span class="pr-1 flex-1">Languages</span>
-                    <span class="mr-auto">
-                      <svg
-                        class="fill-current h-4 w-4 transition duration-150 ease-in-out"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                  <ul
-                    class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
-                  >
-                    <li class="px-3 py-1 hover:bg-gray-100">Javascript</li>
-                    <li class="px-3 py-1 hover:bg-gray-100">Go</li>
-                    <li class="px-3 py-1 hover:bg-gray-100">Rust</li>
-                  </ul>
-                </li>
-              </ul>
+              {% endfor %}
+            </ul>
+            
             </li>
             <li>
               <a href="{% url 'team' %}" class="font-semibold">Team</a>
@@ -232,10 +200,11 @@
               class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32"
             >
               <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                {% for post in categories %}
                 <button
                   class="w-full text-left flex items-center outline-none focus:outline-none"
                 >
-                  <span class="pr-1 flex-1">Cash Dispense ATM</span>
+                  <span class="pr-1 flex-1">{{ post.name }}</span>
                   <span class="mr-auto">
                     <svg
                       class="fill-current h-4 w-4 transition duration-150 ease-in-out"
@@ -248,53 +217,22 @@
                     </svg>
                   </span>
                 </button>
+              
                 <ul
                   class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32 cursor-pointer"
                 >
+                  {% for item in items %}
+           
                   <li class="px-3 py-1 hover:bg-gray-100">
-                    <a href="{% url 'productsDetails' %}">Sefserv-22 ATM</a>
-                  </li>
-                  <li class="px-3 py-1 hover:bg-gray-100">
-                    <a href="{% url 'productsDetails' %}">Sefserv-22e ATM</a>
-                  </li>
-                  <li class="px-3 py-1 hover:bg-gray-100">
-                    <a href="{% url 'productsDetails' %}">Sefserv-25 ATM</a>
-                  </li>
-                  <li class="px-3 py-1 hover:bg-gray-100">
-                    <a href="{% url 'productsDetails' %}">Sefserv-27 ATM</a>
-                  </li>
-                  <li class="px-3 py-1 hover:bg-gray-100">
-                    <a href="{% url 'productsDetails' %}"
-                      >Sefserv SE Cash ATM</a
+                    <a href="{% url 'product_detail' post.id %}"
+                      >{{ item.title }}</a
                     >
                   </li>
+                  {% endfor %}
                 </ul>
+                {% endfor %}
               </li>
-              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
-                <button
-                  class="w-full text-left flex items-center outline-none focus:outline-none"
-                >
-                  <span class="pr-1 flex-1">Languages</span>
-                  <span class="mr-auto">
-                    <svg
-                      class="fill-current h-4 w-4 transition duration-150 ease-in-out"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-                <ul
-                  class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
-                >
-                  <li class="px-3 py-1 hover:bg-gray-100">Javascript</li>
-                  <li class="px-3 py-1 hover:bg-gray-100">Go</li>
-                  <li class="px-3 py-1 hover:bg-gray-100">Rust</li>
-                </ul>
-              </li>
+    
             </ul>
           </div>
 <!--team-->

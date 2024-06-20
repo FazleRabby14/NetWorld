@@ -5,25 +5,37 @@
 
 
 
-
+<div class=" grid grid-cols-5 lg:mx-0 gap-5 px-5 md:px-20 bg-white">
+    <div class="col-span-5 md:col-span-3">
+        <h2 class="text-4xl font-bold tracking-tight text-black sm:text-6xl animate-text md:ml-5 pt-14 md:pt-36">Networld Group</h2>
+    <p class="mt-6 text-lg leading-8 text-black animate-text md:ml-5">NetWorld Group is a leading ICT solutions provider in Bangladesh, providing different forms of services and solutions to banks and financial institutions across the country. We believe in progress through innovation and implement that through our different companies. We are providing IT support& services to financial institutions and other customers across the country since 2006.</p>
+    <a href="{% url 'contact' %}">
+    <button  class="group outline-button animate-text px-10 py-2 border rounded bg-transparent border-blue-500 md:ml-5 my-5 text-blue-500 flex items-center justify-center inline-block hover:bg-blue-500 hover:text-white transition-all duration-300">
+        Contact With Us
+        <svg class="ml-2 w-6 h-6 transition-all duration-300 text-blue-500 group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+        </svg>
+    </button>
+</a>
+    
+       
+</div>
+    <div class="col-span-5 md:col-span-2 items-center rounded-xl">
+        {% include 'gallery.html' %}
+    </div>
+</div>
 
     <main class="relative  flex flex-col justify-center  overflow-hidden ">
         
+
 <!--header section-->
-<div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
-    <img src="https://png.pngtree.com/thumb_back/fh260/background/20201102/pngtree-abstract-communication-and-technology-network-concep-image_450375.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center">
-    <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl" aria-hidden="true">
-      <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-    </div>
-    <div class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu" aria-hidden="true">
-      <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-    </div>
+<div class="relative isolate overflow-hidden bg-white py-24 sm:py-10 overflow-y-scroll bg-cover bg-fixed bg-center bg-no-repeat" 
+style="background-image:url('https://4kwallpapers.com/images/wallpapers/windows-11-dark-mode-abstract-background-black-background-3840x1080-8710.jpg');">
+    <!-- <img src="https://live.staticflickr.com/3338/3613953922_c2df01814c_b.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center parallax-bg">
+    -->
+    
     <div class=" max-w-7xl mx-auto px-6 lg:px-8">
-        <div class="mx-auto lg:mx-0">
-            <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl animate-text text-center">Networld Group</h2>
-         
-            <p class="mt-6 text-lg leading-8 text-gray-300 animate-text text-center">NetWorld Group is a leading ICT solutions provider in Bangladesh, providing different forms of services and solutions to banks and financial institutions across the country. We believe in progress through innovation and implement that through our different companies. We are providing IT support& services to financial institutions and other customers across the country since 2006.</p>
-        </div>
+       
           <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
             <!-- <div class="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
               <a href="{% url 'alljob' %}" class="animate-link">Open roles <span aria-hidden="true">&rarr;</span></a>
@@ -33,18 +45,21 @@
             </div> -->
        {% include 'achievement.html' %}
        {% include 'number.html' %}
+     
       </div>
     </div>
   </div>
- 
+
         {% include 'introduction.html' %}  
-        {% include 'mission.html' %}
+        <!-- {% include 'mission.html' %} -->
         <!--another-->
         <!--our products-->
         {% include 'productsBlog.html' %}
+        {% include  'recentblog.html' %}
         
         <!--done-->
-        <div class="mx-auto font-bold text-3xl pt-5 pb-14 md:pt-20"><h3>Our Partners</h3></div>
+        <div class="mx-auto font-bold text-3xl pt-5 pb-14 md:pt-20 bg-white"><h3>Our Partners</h3></div>
+       <div class="pb-20 bg-white">
         <div class="w-full mx-auto px-4 md:px-6 py-2 md:py-5">
             <div class="text-center">
         
@@ -60,32 +75,30 @@
                 >
                     <ul x-ref="logos" class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
                         <li>
-                            <img src="http://www.networld-bd.com/OurPartnerComPic/huaWei.png" alt="Huawei" class="h-10 md:h-16" />
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/huaWei.png" alt="Huawei" class=" px-4 py-2 border shadow-lg rounded-xl h-16 md:h-24" />
                         </li>
                         <li>
-                            <img src="http://www.networld-bd.com/OurPartnerComPic/certis.png" alt="Certis" class="h-10 md:h-16" />
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/certis.png" alt="Certis" class=" px-4 py-2 border shadow-lg rounded-xl h-16 md:h-24" />
                         </li>
                         <li>
-                            <img src="http://www.networld-bd.com/OurPartnerComPic/MSP.png" alt="MSP" class="h-10 md:h-16" />
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/MSP.png" alt="MSP" class=" px-4 py-2 border shadow-lg rounded-xl h-16 md:h-24" />
                         </li>
                         <li>
-                            <img src="http://www.networld-bd.com/OurPartnerComPic/bpc.png" alt="BPC" class="h-10 md:h-16" />
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/bpc.png" alt="BPC" class=" px-4 py-2 border shadow-lg rounded-xl h-16 md:h-24" />
                         </li>
                         <li>
-                            <img src="http://www.networld-bd.com/OurPartnerComPic/urovo.png" alt="Urovo" class="h-10 md:h-16" />
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/huaWei.png" alt="Huawei" class=" px-4 py-2 border shadow-lg rounded-xl h-16 md:h-24" />
                         </li>
                         <li>
-                            <img src="http://www.networld-bd.com/OurPartnerComPic/EnSmart.png" alt="EnSmart" class="h-10 md:h-16" />
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/certis.png" alt="Certis" class=" px-4 py-2 border shadow-lg rounded-xl h-16 md:h-24" />
                         </li>
                         <li>
-                            <img src="http://www.networld-bd.com/OurPartnerComPic/fime.png" alt="Fime" class="h-10 md:h-16" />
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/MSP.png" alt="MSP" class=" px-4 py-2 border shadow-lg rounded-xl h-16 md:h-24" />
                         </li>
                         <li>
-                            <img src="http://www.networld-bd.com/OurPartnerComPic/tiyanyu.png" alt="Tiyanyu" class="h-10 md:h-16" />
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/bpc.png" alt="BPC" class=" px-4 py-2 border shadow-lg rounded-xl h-16 md:h-24" />
                         </li>
                     </ul>
-
-
                 </div>
                 <!-- End: Logo Carousel animation -->
         
@@ -107,37 +120,56 @@
                 >
                     <ul x-ref="logos" class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
                         <li>
-                            <img src="http://www.networld-bd.com/OurPartnerComPic/huaWei.png" alt="Huawei" class="h-10 md:h-16" />
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/urovo.png" alt="Urovo" class=" px-4 py-2 border shadow-lg rounded-xl h-16 md:h-24" />
                         </li>
                         <li>
-                            <img src="http://www.networld-bd.com/OurPartnerComPic/certis.png" alt="Certis" class="h-10 md:h-16" />
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/EnSmart.png" alt="EnSmart" class=" px-4 py-2 border shadow-lg rounded-xl h-16 md:h-24" />
                         </li>
                         <li>
-                            <img src="http://www.networld-bd.com/OurPartnerComPic/MSP.png" alt="MSP" class="h-10 md:h-16" />
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/fime.png" alt="Fime" class=" px-4 py-2 border shadow-lg rounded-xl h-16 md:h-24" />
                         </li>
                         <li>
-                            <img src="http://www.networld-bd.com/OurPartnerComPic/bpc.png" alt="BPC" class="h-10 md:h-16" />
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/tiyanyu.png" alt="Tiyanyu" class=" px-4 py-2 border shadow-lg rounded-xl h-16 md:h-24" />
                         </li>
                         <li>
-                            <img src="http://www.networld-bd.com/OurPartnerComPic/urovo.png" alt="Urovo" class="h-10 md:h-16" />
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/urovo.png" alt="Urovo" class=" px-4 py-2 border shadow-lg rounded-xl h-16 md:h-24" />
                         </li>
                         <li>
-                            <img src="http://www.networld-bd.com/OurPartnerComPic/EnSmart.png" alt="EnSmart" class="h-10 md:h-16" />
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/EnSmart.png" alt="EnSmart" class=" px-4 py-2 border shadow-lg rounded-xl h-16 md:h-24" />
                         </li>
                         <li>
-                            <img src="http://www.networld-bd.com/OurPartnerComPic/fime.png" alt="Fime" class="h-10 md:h-16" />
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/fime.png" alt="Fime" class=" px-4 py-2 border shadow-lg rounded-xl h-16 md:h-24" />
                         </li>
                         <li>
-                            <img src="http://www.networld-bd.com/OurPartnerComPic/tiyanyu.png" alt="Tiyanyu" class="h-10 md:h-16" />
+                            <img src="http://www.networld-bd.com/OurPartnerComPic/tiyanyu.png" alt="Tiyanyu" class=" px-4 py-2 border shadow-lg rounded-xl h-16 md:h-24" />
                         </li>
                     </ul>
                 </div>
                 <!-- End: Logo Carousel animation -->
-        
+                
             </div>
         </div>
-        
+       </div>
+       <div class="rounded-xl mb-10 h-96 flex items-center md:pl-20 grid grid-cols-1 gap-x-8 gap-y-6 text-3xl font-semibold leading-7 text-green-500 bg-black 
+       bg-[url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply')] bg-cover  bg-center sm:grid-cols-2 md:flex lg:gap-x-10">
+        <a href="{% url 'alljob' %}" class="animate-link">Open roles <span aria-hidden="true">&rarr;</span></a>
+        <a href="{% url 'post' %}" class="animate-link">Internship program <span aria-hidden="true">&rarr;</span></a>
+        <a href="{% url 'index' %}" class="animate-link">Our values <span aria-hidden="true">&rarr;</span></a>
+        <a href="{% url 'team' %}" class="animate-link">Meet our leadership <span aria-hidden="true">&rarr;</span></a>
+        <div class=" w-full md:w-1/3 flex justify-center mt-6 md:mt-0">
+            <img src="static/image/job_image.png" alt="Right side image" class="border border-green-400 rounded-full object-cover h-48 ">
+        </div>
+    </div>
     </main>
+
+    <!-- <script>
+       document.addEventListener('scroll', function() {
+    const parallaxBg = document.querySelector('.parallax-bg');
+    const scrollPosition = window.pageYOffset;
+    parallaxBg.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+});
+
+    </script> -->
 
     <style>
         
@@ -175,6 +207,42 @@
             .logo-carousel {
                 mask-image: linear-gradient(to right, transparent 0, black 128px, black calc(100% - 128px), transparent 100%);
             }
+        }
+
+        /*paralax */
+        /* .parallax {
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+} */
+
+.outline-button {
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Light blue glow */
+            transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        }
+
+        .outline-button:hover {
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.8); /* Stronger blue glow on hover */
+            border-color: rgba(0, 123, 255, 1); /* Change border color on hover */
+        }
+
+        .outline-button svg {
+            transition: fill 0.3s ease-in-out;
+        }
+
+        .outline-button:hover svg {
+            fill: #ffffff;
         }
         </style>
         

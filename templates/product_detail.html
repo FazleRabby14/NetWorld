@@ -15,43 +15,112 @@
 
     <div class="text-justify">
       <h3 class="text-center text-4xl font-semibold text-blue-500 pt-20 pb-5">{{ product.title }}</h3>
+      
+      {% if product.description_specification2 %}
       <p class="text-justify text-sm md:text-xl text-center px-2 md:px-10 xl:px-32">
-        {{ product.description }}
-    
+        {{ product.description_specification1 }}
+     
       </p>
+      {% endif %}
+      
+      {% if product.description_specification3 %}
+      <p class="text-justify text-sm md:text-xl text-center px-2 md:px-10 xl:px-32">
+        {{ product.description_specification3 }}
+     
+      </p>
+      {% endif %}
+
+      {% if product.description_specification4 %}
+      <p class="text-justify text-sm md:text-xl text-center px-2 md:px-10 xl:px-32">
+        {{ product.description_specification4 }}
+     
+      </p>
+      {% endif %}
+
+      {% if product.description_specification5 %}
+      <p class="text-justify text-sm md:text-xl text-center px-2 md:px-10 xl:px-32">
+        {{ product.description_specification5 }}
+     
+      </p>
+      {% endif %}
+
+      
+      
+      {% if product.description_specification6 %}
+      <p class="text-justify text-sm md:text-xl text-center px-2 md:px-10 xl:px-32">
+        {{ product.description_specification6 }}
+     
+      </p>
+      {% endif %}
+
+           
+      {% if product.description_specification7 %}
+      <p class="text-justify text-sm md:text-xl text-center px-2 md:px-10 xl:px-32">
+        {{ product.description_specification7 }}
+     
+      </p>
+      {% endif %}
+
+
     </div>
   
       <div class="mx-auto max-w-7xl lg:flex lg:justify-between lg:px-8 xl:justify-end">
        
           <div class="relative h-80 mt-32 lg:h-auto lg:w-full lg:grow xl:ml-0">
            {% comment %} <a href="{% url 'productsDetails' product.id %}" class="img" style="background-image: url({{ product.image1.url }});"></a>  {% endcomment %}
-            <img class="absolute inset-0 h-[500px] w-[600px] mx-auto flex justify-center items-center bg-gray-50 object-cover" src="{{ product.image1.url }}" alt="{{ product.title }}">
+            <img class="absolute inset-0 h-[300px] w-[400px] mx-auto flex justify-center items-center bg-gray-50 object-cover" src="{{ product.image1.url }}" alt="{{ product.title }}">
            
           </div>
+
           <div class="mx-auto text-justify max-w-2xl pb-24 pt-16 sm:pb-32 sm:pt-20 lg:ml-8 lg:mr-0 lg:w-full lg:max-w-lg lg:flex-none lg:pt-32 xl:w-1/2">
-              <p class="text-base font-semibold leading-7 text-indigo-600 animate-slide-in animate-delay-1">Deploy faster</p>
-              <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl animate-slide-in animate-delay-2">A better workflow</h1>
-              <ul  class=" animation-trigger2 ">
-              {% comment %} <p class="mt-6 text-sm leading-8 text-gray-700 animate-slide-in animate-delay-3"> {% endcomment %}
-              <li class="mt-6 text-sm leading-8 text-gray-700 animate-slide-in animate-delay-3">{{ product.feature }}</li>
-              {% comment %} </p> {% endcomment %}
+            {% if product.feature_name %}
+                <p class="text-base font-semibold leading-7 text-indigo-600 animate-slide-in animate-delay-1">{{ product.feature_name }}</p>
+            {% endif %}
+
+            {% if product.feature %}
+            <ul class="animation-trigger2">
+                <li class="mt-6 text-sm leading-8 text-gray-700 animate-slide-in animate-delay-3">{{ product.feature }}</li>
             </ul>
-            </div>
+        {% endif %}
+            
+            {% if product.feature_description %}
+                <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl animate-slide-in animate-delay-2">{{ product.feature_description }}</h1>
+            {% endif %}
+            
+            {% if  product.short_feature %}
+            <p class="mt-6 text-sm leading-8 text-gray-700 animate-slide-in animate-delay-3">{{ product.short_feature }}</p>
+        {% endif %}
+        
+        </div>
             
       </div>
       <div class="mx-auto max-w-7xl bg-gray-50 text-gray-800 font-sans">
         <div class="max-w-7xl mx-auto p-8">
-            <h1 class="text-3xl font-bold mb-6 text-center">Specifications</h1>
+
+            {% if product.height %}
+            <h1 class="text-3xl font-bold mb-12 text-center mt-40">Specifications</h1>
+         
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <h2 class="text-2xl font-semibold mb-4  text-blue-700 animation-trigger2">Product Dimensions:</h2>
                     <ul  class=" animation-trigger2 ">
                         <li><strong>Front Access</strong></li>
+                         
+                        {% if product.dimension %}
+                        <li><span class="font-semibold">Height:</span> {{ product.dimension }}</li>
+                        {% endif %}
+
+                        {% if product.thick %}
+                        <li><span class="font-semibold">Length:</span> {{ product.length }}</li>
+                        {% endif %}
                         <li><span class="font-semibold">Height:</span> {{ product.height }}</li>
                         <li><span class="font-semibold">Width:</span>{{ product.width }}</li>
                         <li><span class="font-semibold">Depth:</span>{{ product.depth }}</li>
                         <li><span class="font-semibold">Weight:</span>{{ product.weight }}</li>
                     </ul>
+                    {% endif %}
+
+                    {% if product.display %}
                     <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger2 ">Consumer Interface:</h2>
                     <ul class=" animation-trigger2 ">
                         <li><span class="font-semibold">Display:</span> {{ product.display }}</li>
@@ -61,52 +130,157 @@
                         <li><span class="font-semibold">Audio:</span> {{ product.audio }}</li>
                         <li><span class="font-semibold">Barcode Reader:</span>{{ product.barcode_reader }}</li>
                     </ul>
+                    {% endif %}
+
+                    {% if product.recycling_module_specification1 %}
                     <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger2">Recycling Module:</h2>
                     <ul class=" animation-trigger2 ">
-                        <li><span class="font-semibold">Bunch Recycling Module (BRM)</span> with up to 4 recycling cassettes and 1 configurable deposit cassette</li>
-                        <li><span class="font-semibold">ECB Recycling framework compliant</li>
-                        <li><span class="font-semibold">Accepts and dispenses up to 300 notes**</li>
-                        <li><span class="font-semibold">Secure and fully auditable service access</li>
-                        <li><span class="font-semibold">Multi sensor for object detect</li>
+                        <li><span class="font-semibold">{{ product.recycling_module_specification1 }}</li>
+                        <li><span class="font-semibold">{{ product.recycling_module_specification2 }}</li>
+                        <li><span class="font-semibold">{{ product.recycling_module_specification3 }}</li>
+                        <li><span class="font-semibold">{{ product.recycling_module_specification4 }}</li>
+                        <li><span class="font-semibold">{{ product.recycling_module_specification5 }}</li>
                     </ul>
+                    {% endif %}
+
+                    {% if product.resolution %}
+                    <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger2 ">Image Capture</h2>
+                    <ul class=" animation-trigger2 ">
+                        <li><span class="font-semibold">Resolution:</span> {{ product.resolution }}</li>
+                        <li><span class="font-semibold">Gray Scale Levels:</span>{{ product.scale }}</li>
+                        <li><span class="font-semibold">{{ product.color }}</li>
+                        <li><span class="font-semibold">{{ product.mode }}</li
+                    </ul>
+                    {% endif %}
+
+                    {% if product.module %}
+                    <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger2">Module</h2>
+                    <ul class=" animation-trigger2 ">
+                        <li><span class="font-semibold">{{ product.module}}</li>
+                    </ul>
+                    {% endif %}
+
+                    {% if product.image_format1 %}
+                    <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger2">Image Format</h2>
+                    <ul class=" animation-trigger2 ">
+                        <li><span class="font-semibold">{{ product.image_format1 }}</li>
+                        <li><span class="font-semibold">{{ product.image_format2 }}</li>
+                    </ul>
+                    {% endif %}
+
+                    {% if product.communication_specification1 %}
+                    <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger2 ">Communication & SOftware</h2>
+                    <ul class=" animation-trigger2 ">
+                        <li><span class="font-semibold">USB:</span> {{ product.communication_specification1 }}</li>
+                        <li><span class="font-semibold">Ethernet:</span>{{ product.communication_specification2 }}</li>
+                        <li><span class="font-semibold">Drivers:</span> {{ product.communication_specification3 }}</li>
+                        <li><span class="font-semibold">Linux and Mac OSX:</span> {{ product.communication_specification4 }}</li>
+                        <li><span class="font-semibold">Application:</span>{{ product.communication_specification5 }}</li>
+                    </ul>
+                    {% endif %}
+
+                    {% if product.gray_scale %}
+                    <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger2 ">Basic Unit Features</h2>
+                    <ul class=" animation-trigger2 ">
+                        <li><span class="font-semibold">Gray Scale Levels:</span> {{ product.gray_scale }}</li>
+                        <li><span class="font-semibold">Feeder:</span>{{ product.feeder }}</li>
+                        <li><span class="font-semibold">Reader:</span> {{ product.reader }}</li>
+                        <li><span class="font-semibold">Output Guide:</span> {{ product.output_guide }}</li>
+                        <li><span class="font-semibold">Card Scanning:</span>{{ product.card_scanning }}</li>
+                    </ul>
+                    {% endif %}
+
+                    {% if product.endoresement %}
+                    <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger2 ">Option Unit Features</h2>
+                    <ul class=" animation-trigger2 ">
+                        <li><span class="font-semibold">Endorsement printer:</span> {{ product.endoresement }}</li>
+                        <li><span class="font-semibold">Stamp:</span>{{ product.stamp }}</li>
+                        <li><span class="font-semibold">Magnetic Card Reader:</span> {{ product.magnetic_card }}</li>
+                        <li><span class="font-semibold">Chip Card Reader:</span> {{ product.chip_card }}</li>
+                
+                    </ul>
+                    {% endif %}
+
+
+                    {% if product.camera_specification1 %}
+                    <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger2">CAMERAS</h2>
+                    <ul class=" animation-trigger2 ">
+                        <li><span class="font-semibold">{{ product.camera_specification1 }}</li>
+                            <li><span class="font-semibold">{{ product.camera_specification2 }}</li>
+                    </ul>
+                    {% endif %}
+
+                    {% if product.reciept_printer  %}
                     <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger2">Printers:</h2>
                     <ul class=" animation-trigger2 ">
+                        {% if product.printer  %}
+                        <li><span class="font-semibold">Receipt Printer:</span> {{ product.printer }}</li>
+                        {% endif %}
                         <li><span class="font-semibold">Receipt Printer:</span> {{ product.reciept_printer }}</li>
                         <li><span class="font-semibold">Journal Printer:</span>{{ product.journal_printer }}</li>
                     </ul>
+                    {% endif %}
+                    
                 </div>
                 <div>
+                    {% if product.security %}
                     <h2 class="text-2xl font-semibold mb-4 text-blue-700 animation-trigger">Security:</h2>
                     <ul class=" animation-trigger ">
                         <li>{{ product.security }}</li>
               
                     </ul>
+                    {% endif %}
+
+                    {% if product.temparature %}
                     <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger">Environmental:</h2>
                     <ul class=" animation-trigger ">
                         <li><span class="font-semibold">Temperature:</span> {{ product.temparature }}</li>
                         <li><span class="font-semibold">Humidity:</span> {{ product.humidity }}</li>
                         <li><span class="font-semibold">Acoustics:</span> {{ product.acoustic }}</li>
                     </ul>
+                    {% endif %}
+
+                    {% if product.servicing %}
                     <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger">Servicing:</h2>
                     <ul class=" animation-trigger ">
                         <li>{{ product.servicing }}</li>
                         {% comment %} <li>7" LCD control operator panel on rear access model</li> {% endcomment %}
                     </ul>
+                    {% endif %}
+
+                    {% if product.operating_platform %}
                     <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger">Operating Platform:</h2>
                     <ul class=" animation-trigger ">
                         <li>{{ product.operating_platform }}</li>
                     
                     </ul>
+                    {% endif %}
+
+                    {% if product.software %}
                     <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger">Software:</h2>
                     <ul class=" animation-trigger ">
                         <li>{{ prodduct.software }}</li>
                         
                     </ul>
+                    {% endif %}
+
+                    {% if product.dispenser %}
+                    <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger">DISPENSER</h2>
+                    <ul class=" animation-trigger ">
+                        <li>{{ product.dispenser }}</li>
+                        
+                    </ul>
+                    {% endif %}
+
+                    
+                    {% if product.additional_feature %}
                     <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger">Additional Features:</h2>
                     <ul class=" animation-trigger ">
                         <li>{{ product.additional_feature }}</li>
                       
                     </ul>
+                    {% endif %}
+
                 </div>
             </div>
 
@@ -121,14 +295,14 @@
 
         {% comment %} <div class="mt-8 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded animation-trigger3"> {% endcomment %}
        
-        <div class="mt-8">
+        <div class="mt-8 mb-20 ml-1">
        
         {% if product.brochure %}
-        <a href="{{ product.brochure.url }}" class="mt-8 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded animation-trigger3">
+        <a href="{{ product.brochure.url }}" class="mt-20 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded animation-trigger3">
             GET THE BROCHURE
         </a>
         {% else %}
-            <p>No brochure available.</p>
+            <p></p>
         {% endif %}
          </div>
 

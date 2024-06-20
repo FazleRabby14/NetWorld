@@ -23,7 +23,7 @@
   <body x-data="{ open: false }">
     <!-- component -->
     <header
-      class="flex border-b font-sans min-h-[70px] tracking-wide relative z-50"
+      class="flex border-b font-sans min-h-[50px] tracking-wide relative z-50"
     >
       <div
         class="flex fixed items-center justify-between px-6 py-3 gap-4 w-full bg-white border-b border-orange-500 shadow-md"
@@ -32,24 +32,24 @@
           <img
             src="{% static 'image/networld-removebg-preview.png' %}"
             alt="logo"
-            class="w-36"
+            class="w-40 xl:w-60 xl:ml-10"
           />
         </a>
 
         <nav class="flex-1 flex justify-center">
           <ul class="hidden md:flex items-center gap-x-10">
             <li>
-              <a href="{% url 'index' %}" class="font-semibold">Home</a>
+              <a href="{% url 'index' %}" class="font-semibold text-lg">Home</a>
             </li>
 
-              <li class="group inline-block">
+            <li class="group inline-block">
               <button
                 class="outline-none focus:outline-none px-3 py-1 bg-white rounded-sm flex items-center min-w-32"
               >
-                <span class="pr-1 font-semibold flex-1">Products</span>
+                <span class="pr-1 font-semibold flex-1 text-lg pt-2">Products</span>
                 <span>
                   <svg
-                    class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+                    class="mt-2 fill-current h-5 w-5 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                   >
@@ -59,29 +59,30 @@
                   </svg>
                 </span>
               </button>
+
               <ul
-                class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32"
-              >
-              {% for category in categories %}
-              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
-                <button
-                  class="w-full text-left flex items-center outline-none focus:outline-none"
+              class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32"
                 >
-                  <span class="pr-1 flex-1">{{ category.name }}</span>
-                  <span class="mr-auto">
-                    <svg
-                      class="fill-current h-4 w-4 transition duration-150 ease-in-out"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-          
-                <ul
+                {% for category in categories %}
+                <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                  <button
+                    class="w-full text-left flex items-center outline-none focus:outline-none"
+                  >
+                    <span class="pr-1 flex-1 text-lg">{{ category.name }}</span>
+                    <span class="mr-auto">
+                      <svg
+                        class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+            
+                  <ul
                   class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32 cursor-pointer"
                 >
                   {% for item in category.products.all %}
@@ -89,17 +90,17 @@
                       <a href="{% url 'product_detail' item.id %}">{{ item.title }}</a>
                     </li>
                   {% endfor %}
-                </ul>
-              </li>
-            {% endfor %}
-          </ul>
-          
+                  </ul>
+                </li>
+              {% endfor %}
+            </ul>
+              
             </li>
             <li>
-              <a href="{% url 'team' %}" class="font-semibold">Team</a>
+              <a href="{% url 'team' %}" class="font-semibold text-lg">Team</a>
             </li>
             <li>
-              <a href="{% url 'contact' %}" class="font-semibold">Contact</a>
+              <a href="{% url 'contact' %}" class="font-semibold text-lg">Contact</a>
             </li>
           </ul>
         </nav>
@@ -149,7 +150,7 @@
           <div>
             <button class="" @click="open = false">
               <svg
-                class="h-6 w-6 text-gray-600"
+                class="h-6 w-6 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -172,83 +173,59 @@
           <!--home-->
           <div >
             <button
-            class="outline-none focus:outline-none px-3 py-1 bg-white rounded-sm flex items-center ml-2 min-w-32"
+            class="outline-none focus:outline-none px-3 py-1 bg-white rounded-sm flex items-center  min-w-32"
           >
             <a href="{% url 'index' %}" class="font-semibold">Home</a>
             
-          </button>
+            </button>
           </div>
           <!--products-->
           <div class="group inline-block">
-            <button
-              class="outline-none focus:outline-none px-3 py-1 bg-white rounded-sm flex  min-w-32"
-            >
+            <button class="outline-none focus:outline-none px-3 py-1 bg-white rounded-sm flex min-w-32">
               <span class="pr-1 font-semibold flex-1">Products</span>
               <span>
-                <svg
-                  class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-                  />
+                <svg class="mt-2 fill-current h-5 w-5 transform group-hover:-rotate-180 transition duration-150 ease-in-out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
                 </svg>
               </span>
             </button>
-            <ul
-              class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32"
-            >
-              <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
-                {% for post in categories %}
-                <button
-                  class="w-full text-left flex items-center outline-none focus:outline-none"
-                >
-                  <span class="pr-1 flex-1">{{ post.name }}</span>
-                  <span class="mr-auto">
-                    <svg
-                      class="fill-current h-4 w-4 transition duration-150 ease-in-out"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              
-                <ul
-                  class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32 cursor-pointer"
-                >
-                  {% for item in items %}
-           
-                  <li class="px-3 py-1 hover:bg-gray-100">
-                    <a href="{% url 'product_detail' post.id %}"
-                      >{{ item.title }}</a
-                    >
-                  </li>
-                  {% endfor %}
-                </ul>
-                {% endfor %}
-              </li>
-    
+            <ul class="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32">
+              {% for post in categories %}
+                <li class="rounded-sm relative px-3 py-1 hover:bg-gray-100">
+                  <button class="w-full text-left flex items-center outline-none focus:outline-none">
+                    <span class="pr-1 flex-1">{{ post.name }}</span>
+                    <span class="mr-auto">
+                      <svg class="fill-current h-4 w-4 transition duration-150 ease-in-out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                      </svg>
+                    </span>
+                  </button>
+                  <ul class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32 cursor-pointer">
+                    {% for item in post.products.all %}
+                      <li class="px-3 py-1 hover:bg-gray-100">
+                        <a href="{% url 'product_detail' item.id %}">{{ item.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </li>
+              {% endfor %}
             </ul>
           </div>
+          
 <!--team-->
           <div>
             <button
-              class="outline-none focus:outline-none px-3 py-1 bg-white rounded-sm flex items-center ml-2 min-w-32"
+              class="outline-none focus:outline-none px-3 py-1 bg-white rounded-sm flex items-center  min-w-32"
             >
-              <a href="{% url 'index' %}" class="font-semibold">Team</a>
+              <a href="{% url 'team' %}" class="font-semibold">Team</a>
             </button>
           </div>
 <!--contact-->
           <div>
             <button
-              class="outline-none focus:outline-none px-3 py-1 bg-white rounded-sm flex items-center ml-2 min-w-32"
+              class="outline-none focus:outline-none px-3 py-1 bg-white rounded-sm flex items-center  min-w-32"
             >
-              <a href="{% url 'index' %}" class="font-semibold">Contact</a>
+              <a href="{% url 'contact' %}" class="font-semibold">Contact</a>
             </button>
           </div>
 
@@ -258,7 +235,112 @@
       <div class="flex-1" @click="open = false"></div>
     </div>
 
-    <main>{% block base %} {% endblock %}</main>
+    <main class="bg-white">{% block base %} {% endblock %}</main>
+
+    <!--footer-->
+    <footer class="bg-black rounded-xl" aria-labelledby="footer-heading">
+      <h2 id="footer-heading" class="sr-only">Footer</h2>
+      <div class="mx-auto max-w-screen px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-10 rounded-xl">
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-10">
+          <div class="space-y-8">
+            <img class="h-20 w-56 -ml-10 -mt-8" src="{% static 'image/networld-removebg-preview.png' %}" alt="Company name">
+            <p class="text-sm leading-6 text-white">NetWorld Group is a leading ICT solutions provider in Bangladesh, providing different forms of services and solutions to banks and financial institutions across the country.</p>
+            <div class="flex space-x-6">
+              <a href="https://www.facebook.com/khan10.cse/" class="text-white ">
+                  <span class="sr-only">Facebook</span>
+                  <svg class="h-12 w-12" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                </svg>
+                             
+              </a>
+
+            </div>
+          </div>
+          <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 class="text-sm font-semibold leading-6 text-white">Solutions</h3>
+                <ul role="list" class="mt-6 space-y-4">
+                  <li>
+                      <a href="#" class="text-sm leading-6 text-white hover:text-white">Marketing</a>
+                    </li>
+                  <li>
+                      <a href="#" class="text-sm leading-6 text-white hover:text-white">Analytics</a>
+                    </li>
+                  <li>
+                      <a href="#" class="text-sm leading-6 text-white hover:text-white">Commerce</a>
+                    </li>
+                  <li>
+                      <a href="#" class="text-sm leading-6 text-white hover:text-white">Insights</a>
+                    </li>
+                  
+                </ul>
+              </div>
+              <div class="mt-10 md:mt-0">
+                <h3 class="text-sm font-semibold leading-6 text-white">Support</h3>
+                <ul role="list" class="mt-6 space-y-4">
+                  <li>
+                      <a href="#" class="text-sm leading-6 text-white hover:white">Pricing</a>
+                    </li>
+                  <li>
+                      <a href="#" class="text-sm leading-6 text-white hover:white">Documentation</a>
+                    </li>
+                  <li>
+                      <a href="#" class="text-sm leading-6 text-white hover:white">Guides</a>
+                    </li>
+                  <li>
+                      <a href="#" class="text-sm leading-6 text-white hover:white">API Status</a>
+                    </li>
+                  
+                </ul>
+              </div>
+            </div>
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 class="text-sm font-semibold leading-6 text-white">Company</h3>
+                <ul role="list" class="mt-6 space-y-4">
+                  <li>
+                      <a href="#" class="text-sm leading-6 text-white hover:white">About</a>
+                    </li>
+                  <li>
+                      <a href="#" class="text-sm leading-6 text-white hover:white">Blog</a>
+                    </li>
+                  <li>
+                      <a href="#" class="text-sm leading-6 text-white hover:white">Jobs</a>
+                    </li>
+                  <li>
+                      <a href="#" class="text-sm leading-6 text-white hover:white">Press</a>
+                    </li>
+                  <li>
+                      <a href="#" class="text-sm leading-6 text-white hover:white">Partners</a>
+                    </li>
+                  
+                </ul>
+              </div>
+              <div class="mt-10 md:mt-0">
+                <h3 class="text-sm font-semibold leading-6 text-white">Job Offer</h3>
+                
+                <ul role="list" class="mt-6 space-y-4">
+                  <li>
+                    <a href="{% url 'alljob' %}" class="animate-link text-sm text-white">Open roles <span aria-hidden="true">&rarr;</span></a> <br>
+                    </li>
+                  <li>
+                    <a href="{% url 'post' %}" class="animate-link text-sm text-white">Internship program <span aria-hidden="true">&rarr;</span></a> <br>
+                    </li>
+                  <li>
+                    <a href="{% url 'index' %}" class="animate-link text-sm text-white">Our Project <span aria-hidden="true">&rarr;</span></a> <br>
+                    </li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-5 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-6">
+          <p class="text-xs leading-5 text-white">© 2020 Your Company, Inc. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
 
     <style>
       li > ul {

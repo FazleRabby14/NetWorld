@@ -7,35 +7,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Title</title>
-    {% comment %} <link rel="stylesheet" href="styles.css"> <!-- Link your CSS file --> {% endcomment %}
+    <link rel="stylesheet" href="styles.css"> <!-- Link your CSS file -->
 </head>
 <body>
   
   <div id="content" class="relative bg-white">
 
     <div class="text-justify">
-      <h3 class="text-center text-4xl font-semibold text-blue-500 pt-20 pb-5">{{ product.title }}</h3>
+      <h3 class="text-center text-4xl font-semibold text-blue-500 pt-20 pb-5">SELFSERV 83 RECYCLER</h3>
       <p class="text-justify text-sm md:text-xl text-center px-2 md:px-10 xl:px-32">
-        {{ product.description }}
+        The NCR SelfServ™ 83 is an interior free standing pocket cash recycler with a contemporary look and feel and multi-touch capability. It is ideally suited for financial institutions looking to automate self-service for small business banking customers. Designed to perform with twice the reliability of other cash recycling solutions, the SelfServ 83 fulfils transactions with ease and convenience. The easy to use pocket interface is prominently positioned at the front of the ATM, delivering large bunch note capacity and improved visibility for consumer transactions. Advanced servicing capabilities ensure optimal performance and greater availability levels are achieved. Driven by NCR’s Media Handling 2.0 technology, the SelfServ 83 incorporates a new Bunch Recycling Module (BRM) delivering unrivalled performance, serviceability and security.
     
       </p>
     </div>
   
-      <div class="mx-auto max-w-7xl lg:flex lg:justify-between lg:px-8 xl:justify-end">
+      <div class="mx-auto max-w-7xl lg:flex lg:justify-between lg:px-8 xl:justify-end ">
        
-          <div class="relative h-80 mt-32 lg:h-auto lg:w-full lg:grow xl:ml-0">
-           {% comment %} <a href="{% url 'productsDetails' product.id %}" class="img" style="background-image: url({{ product.image1.url }});"></a>  {% endcomment %}
-            <img class="absolute inset-0 h-[500px] w-[600px] mx-auto flex justify-center items-center bg-gray-50 object-cover" src="{{ product.image1.url }}" alt="{{ product.title }}">
-           
+          <div class="relative h-80 md:mt-32 lg:h-auto lg:w-full lg:grow xl:ml-0">
+            <img class="absolute inset-0 h-[500px] w-[600px] mx-auto flex justify-center items-center bg-gray-50 object-cover" src="https://sc04.alicdn.com/kf/He2e6ac141a1b4bdb8653f2e841963ef1Y.jpg" alt="">
           </div>
-          <div class="mx-auto text-justify max-w-2xl pb-24 pt-16 sm:pb-32 sm:pt-20 lg:ml-8 lg:mr-0 lg:w-full lg:max-w-lg lg:flex-none lg:pt-32 xl:w-1/2">
+          <div class="mx-auto text-justify max-w-2xl pb-24 pt-44 sm:pb-32 sm:pt-20 lg:ml-8 lg:mr-0 lg:w-full lg:max-w-lg lg:flex-none lg:pt-32 xl:w-1/2">
               <p class="text-base font-semibold leading-7 text-indigo-600 animate-slide-in animate-delay-1">Deploy faster</p>
               <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl animate-slide-in animate-delay-2">A better workflow</h1>
-              <ul  class=" animation-trigger2 ">
-              {% comment %} <p class="mt-6 text-sm leading-8 text-gray-700 animate-slide-in animate-delay-3"> {% endcomment %}
-              <li class="mt-6 text-sm leading-8 text-gray-700 animate-slide-in animate-delay-3">{{ product.feature }}</li>
-              {% comment %} </p> {% endcomment %}
-            </ul>
+              <p class="mt-6 text-sm leading-8 text-gray-700 animate-slide-in animate-delay-3">
+                •	Display - 15” LCD multi-touch, or FDK, optional privacy filter <br>
+                •	Barcode Reader - 2D Barcode supports both 1D and 2D documents <br>
+                •	Bunch Recycling Module (BRM) with up to 4 recycling cassettes and 1 configurable deposit cassette <br>
+                •	Accepts up to 300 notes and dispenses up to 210 notes <br>
+                •	Multi sensor foreign object detect <br>
+                •	Receipt Printer - 80mm 203dpi graphics thermal printer. Options - retract and capture and 2ST (two-sided thermal printing)<br>
+                •	USB Protection and Parts Validation. Options - Fraudulent Device Inhibitor, Enhanced Card Drive, Skimming Protection Solution (SPS) (IMCRW or DIP), Solidcore Suite for APTRA, Camera based pocket monitoring system<br>
+                •	Uninterruptible Power Supply (UPS)
+                
+  
+              </p>
+              
             </div>
             
       </div>
@@ -47,19 +53,19 @@
                     <h2 class="text-2xl font-semibold mb-4  text-blue-700 animation-trigger2">Product Dimensions:</h2>
                     <ul  class=" animation-trigger2 ">
                         <li><strong>Front Access</strong></li>
-                        <li><span class="font-semibold">Height:</span> {{ product.height }}</li>
-                        <li><span class="font-semibold">Width:</span>{{ product.width }}</li>
-                        <li><span class="font-semibold">Depth:</span>{{ product.depth }}</li>
-                        <li><span class="font-semibold">Weight:</span>{{ product.weight }}</li>
+                        <li><span class="font-semibold">Height:</span> 52.36" (1,330mm)</li>
+                        <li><span class="font-semibold">Width:</span> 18.9" (480mm)</li>
+                        <li><span class="font-semibold">Depth:</span> Front access 40.24" (1,022mm), Rear access 43.7" (1,110mm)</li>
+                        <li><span class="font-semibold">Weight:</span> CEN I safe 1,322.8lbs (600kg)</li>
                     </ul>
                     <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger2 ">Consumer Interface:</h2>
                     <ul class=" animation-trigger2 ">
-                        <li><span class="font-semibold">Display:</span> {{ product.display }}</li>
-                        <li><span class="font-semibold">Keyboard:</span>{{ product.keyboard }}</li>
-                        <li><span class="font-semibold">Card Reader:</span> {{ product.card_reader }}</li>
+                        <li><span class="font-semibold">Display:</span> 15" LCD multi-touch, or FDK, optional privacy filter</li>
+                        <li><span class="font-semibold">Keyboard:</span> EPP (PCI compliant), polycarbonate or stainless steel</li>
+                        <li><span class="font-semibold">Card Reader:</span> Smart Dip, Track 2 or Track 1,2,3 IMCRW with CROPF and smart</li>
                         <li><span class="font-semibold">Integrated Media Entry and Exit Indicators (MEE)</li>
-                        <li><span class="font-semibold">Audio:</span> {{ product.audio }}</li>
-                        <li><span class="font-semibold">Barcode Reader:</span>{{ product.barcode_reader }}</li>
+                        <li><span class="font-semibold">Audio:</span> Optional high quality public audio and/or sound jack with volume control</li>
+                        <li><span class="font-semibold">Barcode Reader:</span> 2D Barcode supports both 1D and 2D documents</li>
                     </ul>
                     <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger2">Recycling Module:</h2>
                     <ul class=" animation-trigger2 ">
@@ -71,50 +77,53 @@
                     </ul>
                     <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger2">Printers:</h2>
                     <ul class=" animation-trigger2 ">
-                        <li><span class="font-semibold">Receipt Printer:</span> {{ product.reciept_printer }}</li>
-                        <li><span class="font-semibold">Journal Printer:</span>{{ product.journal_printer }}</li>
+                        <li><span class="font-semibold">Receipt Printer:</span> 80mm 203dpi graphics thermal printer. Options: retract and capture and 2ST (two-sided thermal printing)</li>
+                        <li><span class="font-semibold">Journal Printer:</span> 80mm 203dpi graphics thermal printer (E-Journal available as default)</li>
                     </ul>
                 </div>
                 <div>
                     <h2 class="text-2xl font-semibold mb-4 text-blue-700 animation-trigger">Security:</h2>
                     <ul class=" animation-trigger ">
-                        <li>{{ product.security }}</li>
-              
+                        <li>USB Protection and Parts Validation. Options: Fraudulent Device Inhibitor, Enhanced Card Drive, Skimming Protection Solution (SPS) (IMCRW or DIP), Solidcore Suite for APTRA, Camera based pocket monitoring system</li>
+                        <li>Uninterruptible Power Supply (UPS)</li>
+                        <li>Safes: CEN1, CEN III, CEN III ExGas, CEN IV ExGas</li>
+                        <li>Trusted Platform Module</li>
                     </ul>
                     <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger">Environmental:</h2>
                     <ul class=" animation-trigger ">
-                        <li><span class="font-semibold">Temperature:</span> {{ product.temparature }}</li>
-                        <li><span class="font-semibold">Humidity:</span> {{ product.humidity }}</li>
-                        <li><span class="font-semibold">Acoustics:</span> {{ product.acoustic }}</li>
+                        <li><span class="font-semibold">Temperature:</span> 50°F to 104°F (10°C to 40°C)</li>
+                        <li><span class="font-semibold">Humidity:</span> 20% to 80%</li>
+                        <li><span class="font-semibold">Acoustics:</span> Sound power 65db (A) idle, 68db (A) operating</li>
                     </ul>
                     <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger">Servicing:</h2>
                     <ul class=" animation-trigger ">
-                        <li>{{ product.servicing }}</li>
-                        {% comment %} <li>7" LCD control operator panel on rear access model</li> {% endcomment %}
+                        <li>Front or rear access</li>
+                        <li>7" LCD control operator panel on rear access model</li>
                     </ul>
                     <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger">Operating Platform:</h2>
                     <ul class=" animation-trigger ">
-                        <li>{{ product.operating_platform }}</li>
-                    
+                        <li>Intel® i3 and i5 processor options</li>
+                        <li>4GB or 8GB</li>
+                        <li>500GB hard drive</li>
+                        <li>500GB SSD hard drive</li>
                     </ul>
                     <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger">Software:</h2>
                     <ul class=" animation-trigger ">
-                        <li>{{ prodduct.software }}</li>
-                        
+                        <li>Windows® 7/10 ready</li>
+                        <li>APTRA™ software suite</li>
                     </ul>
                     <h2 class="text-2xl font-semibold mt-6 mb-4 text-blue-700 animation-trigger">Additional Features:</h2>
                     <ul class=" animation-trigger ">
-                        <li>{{ product.additional_feature }}</li>
-                      
+                        <li>Biometrics ready</li>
+                        <li>Contactless for mobile banking</li>
+                        <li>Cash and consumer cameras</li>
                     </ul>
                 </div>
             </div>
-            {% if product.brochure %}
-            <a href="{{ product.brochure.url }}" class="btn btn-primary">Get The Brochure</a>
-            <p>Brochure URL: {{ product.brochure.url }}</p>
-        {% else %}
-            <p>No brochure available.</p>
-        {% endif %}
+            <button class="animation-trigger3 mt-8 outline-2 text-black font-bold py-2 px-4 rounded shadow-lg glow-effect animated-glow">
+                GET THE BROCHURE
+            </button>
+            
         </div>
     </div>
     </div>
@@ -332,5 +341,20 @@ body {
         transform: translatex(0);
     }
 
+
+    /*button*/
+    .glow-effect {
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.6); /* Light cyan glow */
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 0 30px rgba(0, 255, 255, 0.6); }
+            50% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.8); }
+            100% { box-shadow: 0 0 10px rgba(0, 255, 255, 0.6); }
+        }
+
+        .animated-glow {
+            animation: glow 1.5s infinite;
+        }
   </style>
 {% endblock %}

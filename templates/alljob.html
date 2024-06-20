@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 {% block base %}
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 max-w-7xl mx-auto py-5 md:py-10 xl:py-20">
-    <div class="max-w-sm mb-6 border p-4 rounded-lg shadow-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 max-w-7xl mx-auto mt-20 md:mt-0 py-5 md:py-10 xl:py-20">
+    <div class="max-w-sm mb-6 border p-4 rounded-lg shadow-lg mx-auto">
         <a href="#">
-            <img class="rounded-lg" src="https://emeritus.org/in/wp-content/uploads/sites/3/2022/06/IT-skills-1.jpg.optimal.jpg">
+            <img class="rounded-lg w-full h-52" src="https://emeritus.org/in/wp-content/uploads/sites/3/2022/06/IT-skills-1.jpg.optimal.jpg">
             <div class="flex items-center my-3">
                 <span class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-bold leading-5 text-white font-display mr-2 capitalize bg-green-500">
                     Full-time
@@ -18,16 +18,18 @@
             </p>
         </a>
         <div class="flex justify-end mt-4">
-            <button class="font-bold py-2 px-4 rounded shadow-lg hover:bg-green-700 border-b border-r border-green-500">
-                Apply Now
-            </button>
+            <a href="{% url 'post' %}">
+                <button class="font-bold py-2 px-4 rounded shadow-lg hover:bg-green-700 hover:text-white border-b border-r border-green-500">
+                    Apply Now
+                </button>
+            </a>
         </div>
     </div>
     
 
-    <div class="max-w-sm mb-6 md:md-0  border p-4 rounded-lg shadow-lg">
+    <div class="max-w-sm mb-6 md:md-0  border p-4 rounded-lg shadow-lg mx-auto">
         <a href="#">
-            <img class="rounded-lg " src="https://assets-global.website-files.com/5e9aa66fd3886aa2b4ec01ca/6507a9857dd32ba394160042_19.%20What%20is%20Software%20Engineering.png">
+            <img class="rounded-lg w-full h-52" src="https://assets-global.website-files.com/5e9aa66fd3886aa2b4ec01ca/6507a9857dd32ba394160042_19.%20What%20is%20Software%20Engineering.png">
             <div class="flex items-center my-3">
                 <span class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-bold leading-5 text-white font-display mr-2 capitalize bg-green-500" >
                    Internship: Full-time
@@ -41,15 +43,17 @@
             </p>
         </a>
         <div class="flex justify-end mt-4">
-            <button class="font-bold py-2 px-4 rounded shadow-lg hover:bg-green-700 border-b border-r border-green-500">
-                Apply Now
-            </button>
+            <a href="{% url 'post' %}">
+                <button class="font-bold py-2 px-4 rounded shadow-lg hover:bg-green-700 hover:text-white border-b border-r border-green-500">
+                    Apply Now
+                </button>
+            </a>
         </div>
     </div>
 
-    <div class="max-w-sm mb-6 md:md-0  border p-4 rounded-lg shadow-lg">
+    <div class="max-w-sm mb-6 md:md-0  border p-4 rounded-lg shadow-lg mx-auto">
         <a href="#">
-            <img class="rounded-lg " srcset="https://img.freepik.com/premium-photo/closing-deals-with-confidence-animated-sales-manager-character_893571-11248.jpg">
+            <img class="rounded-lg w-full h-52" srcset="https://img.freepik.com/premium-photo/closing-deals-with-confidence-animated-sales-manager-character_893571-11248.jpg">
             <div class="flex items-center my-3">
                 <span class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-bold leading-5 text-white font-display mr-2 capitalize bg-green-500" >
                    Full-time
@@ -62,10 +66,13 @@
                 </span>
             </p>
         </a>
-        <div class="flex justify-end mt-4">
-            <button class="font-bold py-2 px-4 rounded shadow-lg hover:bg-green-700 border-b border-r border-green-500">
-                Apply Now
-            </button>
+        <div class="flex justify-end mt-4 b-0 right-0">
+            <a href="{% url 'post' %}">
+                <button class="font-bold py-2 px-4 rounded shadow-lg hover:bg-green-700 hover:text-white border-b border-r border-green-500">
+                    Apply Now
+                </button>
+            </a>
+           
         </div>
     </div>
 </div>

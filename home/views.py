@@ -74,3 +74,6 @@ def saveEnquiry(request):
     # For GET request, render the contact form
     return render(request, "contact.html")
 
+
+def allproductpage(request):
+    return render(request, 'product.html')
